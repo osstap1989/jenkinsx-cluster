@@ -7,18 +7,18 @@ spec:
   cluster:
     devEnvApprovers:
     - todo
-    environmentGitOwner: todo
-    gitKind: github
-    gitName: github
-    gitServer: https://github.com
+    clusterName: tf-jx-included-toad
+    environmentGitOwner: osstap1989
     provider: eks
+    region: eu-central-1
   environments:
   - key: dev
   - key: staging
   - key: production
   ingress:
-    domain: ""
-    externalDNS: false
+    domain: "jekinsx.t1ddevelopment.org"
+    externalDNS: true
+    ignoreLoadBalancer: true
     namespaceSubDomain: -jx.
     tls:
       email: ""
@@ -26,5 +26,9 @@ spec:
       production: false
   repository: nexus
   secretStorage: vault
-  vault: {}
+  vault:
+   aws:
+     autoCreate: true
+     iamUserName: okishchak
+   disableURLDiscovery: true
   webhook: lighthouse

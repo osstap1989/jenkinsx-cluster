@@ -25,10 +25,6 @@ spec:
       enabled: false
       production: false
   repository: nexus
-  secretStorage: vault
-  vault:
-   aws:
-     autoCreate: true
-     iamUserName: okishchak
-   disableURLDiscovery: true
+  secretStorage: local
+  vault: {}
   webhook: lighthouse
